@@ -33,6 +33,7 @@ namespace TodoApi.Controllers
         /// Retrieve a list of Todo entities.
         /// </summary>
         /// <returns>Returns a a list of Todos</returns>
+        [HttpGet]
         [ResponseCodes(HttpStatusCode.OK)]
         [ResponseType(typeof(List<TodoItem>))]
         public IHttpActionResult GetAll()
@@ -48,6 +49,7 @@ namespace TodoApi.Controllers
         [HttpGet]
         [Route("{id}")]
         [ResponseCodes(HttpStatusCode.OK, HttpStatusCode.NotFound)]
+        [ResponseType(typeof(TodoItem))]
         public IHttpActionResult GetById(long id)
         {
             var item = _context.TodoItems.Find(id);
@@ -65,6 +67,7 @@ namespace TodoApi.Controllers
         /// <returns>A newly created TodoItem</returns>
         [HttpPost]
         [ResponseCodes(HttpStatusCode.Created)]
+        [ResponseType(typeof(TodoItem))]
         public IHttpActionResult Create(TodoItem item)
         {
             _context.TodoItems.Add(item);
@@ -82,6 +85,7 @@ namespace TodoApi.Controllers
         [HttpPut]
         [Route("{id}")]
         [ResponseCodes(HttpStatusCode.OK, HttpStatusCode.NotFound)]
+        [ResponseType(typeof(TodoItem))]
         public IHttpActionResult Update(long id, TodoItem item)
         {
             var todo = _context.TodoItems.Find(id);
@@ -105,6 +109,7 @@ namespace TodoApi.Controllers
         [HttpDelete]
         [Route("{id}")]
         [ResponseCodes(HttpStatusCode.NoContent, HttpStatusCode.NotFound)]
+        [ResponseType(typeof(void))]
         public IHttpActionResult Delete(long id)
         {
             var todo = _context.TodoItems.Find(id);
