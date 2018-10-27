@@ -521,5 +521,10 @@
             <param name="id">todo item id</param>
             <returns>No Content</returns>
         </member>
+        <member name="T:TodoApi.Models.TodoItem">
+            <summary>
+            A Todo Item entity.
+            </summary>
+        </member>
     </members>
 </doc>

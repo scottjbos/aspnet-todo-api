@@ -7,6 +7,9 @@ using System.Web;
 
 namespace TodoApi.Models
 {
+    /// <summary>
+    /// A Todo Item entity.
+    /// </summary>
     public class TodoItem
     {
         public long Id { get; set; }
