@@ -13,6 +13,7 @@ using System.Web.Http.Controllers;
 using System.Web.Http.Description;
 using TodoApi.Areas.HelpPage.ModelDescriptions;
 using TodoApi.Areas.HelpPage.Models;
+using TodoApi.Attributes;
 
 namespace TodoApi.Areas.HelpPage
 {
@@ -240,6 +241,10 @@ namespace TodoApi.Areas.HelpPage
             {
                 ApiDescription = apiDescription,
             };
+
+            var statusCodesAttrib = apiDescription.ActionDescriptor.GetCustomAttributes<ResponseCodesAttribute>();
+            if (statusCodesAttrib.Any())
+                apiModel.ResponseCodes = statusCodesAttrib.FirstOrDefault().ResponseCodes;
 
             ModelDescriptionGenerator modelGenerator = config.GetModelDescriptionGenerator();
             HelpPageSampleGenerator sampleGenerator = config.GetHelpPageSampleGenerator();

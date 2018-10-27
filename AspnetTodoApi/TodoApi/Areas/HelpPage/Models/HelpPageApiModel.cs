@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Net;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
 using TodoApi.Areas.HelpPage.ModelDescriptions;
@@ -83,6 +84,13 @@ namespace TodoApi.Areas.HelpPage.Models
         /// Gets the error messages associated with this model.
         /// </summary>
         public Collection<string> ErrorMessages { get; private set; }
+
+        //Custom Properties
+        /// <summary>
+        /// List of Http Status codes returned by an end point
+        /// </summary>
+        public IEnumerable<HttpStatusCode> ResponseCodes { get; set; }
+        //Custom Properies
 
         private static IList<ParameterDescription> GetParameterDescriptions(ModelDescription modelDescription)
         {

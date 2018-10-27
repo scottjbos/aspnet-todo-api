@@ -11,6 +11,17 @@
 <div>
     <p>@description.Documentation</p>
 
+    @if (Model.ResponseCodes != null)
+    {
+        <h3>Response Codes</h3>
+        <ul>
+            @foreach (var code in Model.ResponseCodes)
+            {
+                <li>@code (@((int)code))</li>
+            }
+        </ul>
+    }
+
     <h2>Request Information</h2>
 
     <h3>URI Parameters</h3>

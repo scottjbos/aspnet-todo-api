@@ -244,6 +244,11 @@
             Gets the error messages associated with this model.
             </summary>
         </member>
+        <member name="P:TodoApi.Areas.HelpPage.Models.HelpPageApiModel.ResponseCodes">
+            <summary>
+            List of Http Status codes returned by an end point
+            </summary>
+        </member>
         <member name="T:TodoApi.Areas.HelpPage.HelpPageSampleGenerator">
             <summary>
             This class will generate the samples for the help page.
