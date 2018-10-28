@@ -4,6 +4,58 @@
         <name>TodoApi</name>
     </assembly>
     <members>
+        <member name="T:TodoApi.Controllers.SecretController">
+            <inheritdoc />
+            <summary>
+            A secret controller that should not exposed to the public API help page.
+            </summary>
+        </member>
+        <member name="M:TodoApi.Controllers.SecretController.GetSecretCode">
+            <summary>
+            Gets the Todo applications secrets.
+            </summary>
+            <returns>Returns all the secrets</returns>
+        </member>
+        <member name="T:TodoApi.Controllers.TodoController">
+            <summary>
+            Provides API for managing Todo entities.
+            </summary>
+        </member>
+        <member name="M:TodoApi.Controllers.TodoController.GetAll">
+            <summary>
+            Retrieve a list of Todo entities.
+            </summary>
+            <returns>Returns a a list of Todos</returns>
+        </member>
+        <member name="M:TodoApi.Controllers.TodoController.GetById(System.Int64)">
+            <summary>
+            Retrieves a Todo entity.
+            </summary>
+            <param name="id">todo item id</param>
+            <returns>Returns a TodoItem</returns>
+        </member>
+        <member name="M:TodoApi.Controllers.TodoController.Create(TodoApi.Models.TodoItem)">
+            <summary>
+            Create a Todo entity.
+            </summary>
+            <param name="item">todo item</param>
+            <returns>A newly created TodoItem</returns>
+        </member>
+        <member name="M:TodoApi.Controllers.TodoController.Update(System.Int64,TodoApi.Models.TodoItem)">
+            <summary>
+            Updates a Todo entity.
+            </summary>
+            <param name="id">todo item id</param>
+            <param name="item">todo item</param>
+            <returns>An updated TodoItem.</returns>
+        </member>
+        <member name="M:TodoApi.Controllers.TodoController.Delete(System.Int64)">
+            <summary>
+            Deletes a Todo entity.
+            </summary>
+            <param name="id">todo item id</param>
+            <returns>No Content</returns>
+        </member>
         <member name="M:TodoApi.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
             <summary>
             Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
@@ -485,46 +537,6 @@
             Initializes a new instance of the <see cref="T:TodoApi.Areas.HelpPage.XmlDocumentationProvider"/> class.
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
-        </member>
-        <member name="T:TodoApi.Controllers.TodoController">
-            <summary>
-            Provides API for managing Todo entities.
-            </summary>
-        </member>
-        <member name="M:TodoApi.Controllers.TodoController.GetAll">
-            <summary>
-            Retrieve a list of Todo entities.
-            </summary>
-            <returns>Returns a a list of Todos</returns>
-        </member>
-        <member name="M:TodoApi.Controllers.TodoController.GetById(System.Int64)">
-            <summary>
-            Retrieves a Todo entity.
-            </summary>
-            <param name="id">todo item id</param>
-            <returns>Returns a TodoItem</returns>
-        </member>
-        <member name="M:TodoApi.Controllers.TodoController.Create(TodoApi.Models.TodoItem)">
-            <summary>
-            Create a Todo entity.
-            </summary>
-            <param name="item">todo item</param>
-            <returns>A newly created TodoItem</returns>
-        </member>
-        <member name="M:TodoApi.Controllers.TodoController.Update(System.Int64,TodoApi.Models.TodoItem)">
-            <summary>
-            Updates a Todo entity.
-            </summary>
-            <param name="id">todo item id</param>
-            <param name="item">todo item</param>
-            <returns>An updated TodoItem.</returns>
-        </member>
-        <member name="M:TodoApi.Controllers.TodoController.Delete(System.Int64)">
-            <summary>
-            Deletes a Todo entity.
-            </summary>
-            <param name="id">todo item id</param>
-            <returns>No Content</returns>
         </member>
         <member name="T:TodoApi.Models.TodoItem">
             <summary>
